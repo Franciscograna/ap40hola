@@ -57,12 +57,12 @@ public class Partido {
 	
 	
 	
-	public int resultado() {								//ganador
+		public int resultado(int golesEquipo1, int golesEquipo2) {			//ganador
 		int resultado=0;
 		
-		if (this.golesEquipo1>this.golesEquipo2)
+		if (golesEquipo1>golesEquipo2)
 			{resultado = 3;}
-		if (this.golesEquipo1==this.golesEquipo2)
+		if (golesEquipo1==golesEquipo2)
 			{resultado = 1;}
 		else
 		{}
