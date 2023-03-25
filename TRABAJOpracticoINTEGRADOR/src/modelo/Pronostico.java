@@ -38,13 +38,13 @@ public class Pronostico {
 	
 	
 	
-	public int apuesta( Partido partido[]) {            // Comparacion entre tiket y resultado
+	public int apuesta( Partido partido[]) {        	    // Comparacion entre tiket y resultado
 		int tiketJugador = 0;                              // variable provisoria despues aca se lee la apuesta
-
+		Partido partid = new Partido(); 		  //para poder ingresar al metodo resultado
 		int count=0;
 		for (int i =0; i<partido.length;i++) {
 			
-		if (partido[i].resultado()== tiketJugador) {     // comparara si el equipo1 es 3(ganador), 1(empatador) o 0(perdedor) 
+			if (partido[i].resultado(partid.getGolesEquipo1(),partid.getGolesEquipo2())== tiketJugador)  {     // comparara si el equipo1 es 3(ganador), 1(empatador) o 0(perdedor) 
 			count=count+1;
 			
 			}		
