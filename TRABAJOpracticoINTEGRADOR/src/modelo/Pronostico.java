@@ -38,7 +38,7 @@ public class Pronostico {
 	
 	
 	
-	public int apuesta( Partido[] partido, int tiketJugador[]) {             
+	public int apuesta( Partido[] partido, int tiketJugador[]) {             //array de partidos y array de partidos apostados
 		tiketJugador[0] =3; 						 
 		tiketJugador[1] =1; 						 //lectura del tiket de apuesta, desp se saca
 		
@@ -54,7 +54,7 @@ public class Pronostico {
 			
 	
 		}
-		return count;
+		return count; 			//cantidad de aciertos
 				
 	}
 		
