@@ -39,15 +39,14 @@ public class Pronostico {
 	
 	
 	public int apuesta( Partido[] partido, int tiketJugador[]) {             //array de partidos y array de partidos apostados
-		tiketJugador[0] =3; 						 
-		tiketJugador[1] =1; 						 //lectura del tiket de apuesta, desp se saca
+		
 		
 		Partido partid = new Partido();
 		int count=0;
 		
 			for(int i=0; i<partido.length;i++)			//lectura de datos del partido, del equipo1 
 			{
-		if (partido[i].resultado(partid.getGolesEquipo1(),partid.getGolesEquipo2())== tiketJugador[i]) // Comparacion entre tiket y resultado
+		if (partido[i].resultado(partido[i].getGolesEquipo1(),partido[i].getGolesEquipo2())== tiketJugador[i].resultado(tiketJugador[i].getGolesEquipo1(), tiketJugador[i].getGolesEquipo1()))
 			
 			count=count+1;
 			
