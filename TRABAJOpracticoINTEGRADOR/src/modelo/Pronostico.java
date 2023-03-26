@@ -38,16 +38,20 @@ public class Pronostico {
 	
 	
 	
-	public int apuesta( Partido partido) {            // Comparacion entre tiket y resultado
-		int tiketJugador = 0; 
+	public int apuesta( Partido[] partido, int tiketJugador[]) {             
+		tiketJugador[0] =3; 						 
+		tiketJugador[1] =1; 						 //lectura del tiket de apuesta, desp se saca
+		
 		Partido partid = new Partido();
 		int count=0;
 		
+			for(int i=0; i<partido.length;i++)			//lectura de datos del partido, del equipo1 
+			{
+		if (partido[i].resultado(partid.getGolesEquipo1(),partid.getGolesEquipo2())== tiketJugador[i]) // Comparacion entre tiket y resultado
 			
-		if (partido.resultado(partid.getGolesEquipo1(),partid.getGolesEquipo2())== tiketJugador) {
 			count=count+1;
 			
-				
+			
 	
 		}
 		return count;
