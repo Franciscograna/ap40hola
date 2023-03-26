@@ -38,8 +38,8 @@ public class Pronostico {
 	
 	
 	
-	public int apuesta( Partido[] partido, int tiketJugador[]) {             //array de partidos y array de partidos apostados
-		
+	public int apuesta( Partido partido[], Partido tiketJugador[]) {             //array de partidos y array de partidos apostados
+										     // usan la misma clase partido
 		
 		Partido partid = new Partido();
 		int count=0;
