@@ -38,22 +38,7 @@ public class Pronostico {
 	
 	
 	
-	public int apuesta( Partido partido[], Partido tiketJugador[]) {             //array de partidos y array de partidos apostados
-										     // usan la misma clase partido
-		
-		Partido partid = new Partido();
-		int count=0;
-		
-			for(int i=0; i<partido.length;i++)			//lectura de datos del partido, del equipo1 
-			{
-		if (partido[i].resultado(partido[i].getGolesEquipo1(),partido[i].getGolesEquipo2())== tiketJugador[i].resultado(tiketJugador[i].getGolesEquipo1(), tiketJugador[i].getGolesEquipo1()))
-			
-			count=count+1;
-			
-			
-	
-		}
-		return count; 			//cantidad de aciertos
+
 				
 	}
 		
