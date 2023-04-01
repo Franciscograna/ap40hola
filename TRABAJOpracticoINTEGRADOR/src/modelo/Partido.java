@@ -57,20 +57,6 @@ public class Partido {
 	
 	
 	
-		public int resultado(int golesEquipo1, int golesEquipo2) {			//ganador 
-		int resultado=0;							//
-		
-		if (golesEquipo1>golesEquipo2)
-			{resultado = 3;}                       //		SISTEMA DE PUNTUACION
-		if (golesEquipo1==golesEquipo2)
-			{resultado = 1;}                       //     		  EN EL PARTIDO basandose en el equipo1
-		else
-		{}
-		
-		
-		
-		return resultado; //resultado del equipo1
-	}
 	
 	
 	
