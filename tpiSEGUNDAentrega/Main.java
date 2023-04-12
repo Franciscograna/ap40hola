@@ -1,6 +1,3 @@
-package main;
-import java.nio.charset.Charset;
-import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -24,17 +21,18 @@ public class Main {
 			ArrayList<Partido>       rondaPartido              = new ArrayList<Partido>();
 			ArrayList<Ronda>         rondasPartido             = new ArrayList<Ronda>();  //clase que guarda la clase partido y el numero de ronda
 			List<String> lineas1= null;
+			String ruta1="C:\\Users\\franc\\eclipse-workspace\\Maven\\src\\main\\resultados.csv" ;
 		
 		   // ahora lectura apuesta		   
 																			//por ahora tiene 3 objetos como resultara el partido, el partido y el "Equipo" ganador
 			ArrayList<Pronostico> pronostico = new ArrayList<Pronostico>(); //clase que guarda la apuesta que debera guardar la persona
 			ArrayList<Persona> personas = new ArrayList<Persona>();
 			List<String> lineas2 = null;
-						 
+			String ruta2="C:\\Users\\franc\\eclipse-workspace\\Maven\\src\\main\\pronosticos.csv" ;			 
 			  //metodos
-			  leerresultados(ResultadoEnumRondaPartido,rondaPartido, rondasPartido ,lineas1);
+			  leerresultados(ResultadoEnumRondaPartido,rondaPartido, rondasPartido ,lineas1,ruta1);
 			  
-			  leerpronostico(personas, pronostico,lineas2);
+			  leerpronostico(personas, pronostico,lineas2,ruta2);
 			  
 			  calcularPuntajes( personas,  pronostico,  rondasPartido,  ResultadoEnumRondaPartido) ;
 					
@@ -49,10 +47,10 @@ public class Main {
 	
 	
 	
-	private static void leerresultados(ArrayList<ResultadoEnum> ResultadoEnumRondaPartido,ArrayList<Partido> rondaPartido, ArrayList<Ronda> rondasPartido, List<String> lineas1) {
+	private static void leerresultados(ArrayList<ResultadoEnum> ResultadoEnumRondaPartido,ArrayList<Partido> rondaPartido, ArrayList<Ronda> rondasPartido, List<String> lineas1,String ruta1) {
 try {
 			
-			lineas1 = Files.readAllLines(Paths.get("C:\\Users\\franc\\eclipse-workspace\\Maven\\src\\main\\resultados.csv"), Charset.forName("ISO-8859-1"));
+			lineas1 = Files.readAllLines(Paths.get(ruta1), Charset.forName("ISO-8859-1"));
 			int i=0;lineas1.remove(0);
 			for(String linea :lineas1)	//loop de lectura		
 			 { 
@@ -107,11 +105,11 @@ try {
 
 
 
-	private static void leerpronostico(ArrayList<Persona> personas, ArrayList<Pronostico> pronostico,List<String> lineas2) {
+	private static void leerpronostico(ArrayList<Persona> personas, ArrayList<Pronostico> pronostico,List<String> lineas2,String ruta2) {
 		try {
 
 			
-			lineas2 = Files.readAllLines(Paths.get("C:\\Users\\franc\\eclipse-workspace\\Maven\\src\\main\\pronosticos.csv"), Charset.forName("ISO-8859-1"));
+			lineas2 = Files.readAllLines(Paths.get(ruta2), Charset.forName("ISO-8859-1"));
 			int i=0;lineas2.remove(0);
 			
 			for(String linea :lineas2)			
