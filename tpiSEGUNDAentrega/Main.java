@@ -46,7 +46,7 @@ public class Main {
 				
 			//para añadir a la lista de partido y a la lista de resulltadoEnum  creo ua variable intermadia y esa deespues la añado
 			Partido addPartido = new Partido(equipo1Result, equipo2Result, equipo1Goles, equipo2Goles); 
-			addPartido.setEquipo1(equipo1Result);addPartido.setEquipo2(equipo2Result);addPartido.setGolesEquipo1(equipo1Goles);addPartido.setGolesEquipo1(equipo1Goles);
+			addPartido.setEquipo1(equipo1Result);addPartido.setEquipo2(equipo2Result);addPartido.setGolesEquipo1(equipo2Goles);addPartido.setGolesEquipo2(equipo2Goles);
 			rondaPartido.add(addPartido);
 			//rondaPartido.add(new Partido(equipo1Result, equipo2Result, equipo1Goles, equipo2Goles));  //antes creaba mediante constructor 	
 			
@@ -68,16 +68,14 @@ public class Main {
 			 }
 		   System.out.println("---------");
 		   System.out.println("resultados");
-		   System.out.println("---------");
-		   System.out.println(ResultadoEnumRondaPartido.get(0).getResultadoEqu1()+"  "+ResultadoEnumRondaPartido.get(0).getResultadoEqu2());
-		   System.out.println(ResultadoEnumRondaPartido.get(1).getResultadoEqu1()+"  "+ResultadoEnumRondaPartido.get(1).getResultadoEqu2());
-		   System.out.println(ResultadoEnumRondaPartido.get(2).getResultadoEqu1()+"  "+ResultadoEnumRondaPartido.get(2).getResultadoEqu2());
-		   System.out.println(ResultadoEnumRondaPartido.get(3).getResultadoEqu1()+"  "+ResultadoEnumRondaPartido.get(3).getResultadoEqu2());
+		   System.out.println("          ");
+		  for(int indice=0; indice<ResultadoEnumRondaPartido.size();indice++) {
+		   System.out.println("R: "+rondasPartido.get(indice).getNro()+"  "+rondasPartido.get(indice).getPartido().getEquipo1().getEquipo()+"  "+ResultadoEnumRondaPartido.get(indice).getResultadoEqu1()+"  "+rondasPartido.get(indice).getPartido().getEquipo2().getEquipo()+"  "+ResultadoEnumRondaPartido.get(indice).getResultadoEqu2());}
 		   System.out.println("                                                                                                          ");
 		   
 		   // ahora lectura apuesta
 		   
-																			//por ahora tiene 3 objetos como resultara el partido, el partido y el "Equipo" ganador
+																			
 			ArrayList<Pronostico> pronostico = new ArrayList<Pronostico>(); //clase que guarda la apuesta que debera guardar la persona
 			ArrayList<Persona> personas = new ArrayList<Persona>();
 			try {
@@ -104,10 +102,7 @@ public class Main {
 										}
 						if (censo==0) {personaAdd.setNombre(persona); personaAdd.setPuntos(0);personas.add(personaAdd);}// si no lo encuentro lo agrego
 						}
-					
-						 								
-					  //la guardo para cargar en el pronostico
-					 
+								 												 
 					String resultado1a    = "EMPATE";  //leo y guardo valores
 					String resultado2a    = "EMPATE";
 				    String gana1          = linea.split(";")[2];
@@ -149,67 +144,30 @@ public class Main {
 				 }
 			   System.out.println("---------");
 			   System.out.println("apuestas");
-			   System.out.println("---------");
-			   System.out.println(pronostico.get(0).getPartido().getEquipo1().getEquipo()+ " "+pronostico.get(0).getPartido().getEquipo2().getEquipo()+pronostico.get(0).getPersona().getNombre()+" "+pronostico.get(0).getResultadoApuesta().getResultadoEqu1()+" "+pronostico.get(0).getResultadoApuesta().getResultadoEqu2());
-			   System.out.println(pronostico.get(1).getPartido().getEquipo1().getEquipo()+ " "+pronostico.get(1).getPartido().getEquipo2().getEquipo()+pronostico.get(1).getPersona().getNombre()+" "+pronostico.get(1).getResultadoApuesta().getResultadoEqu1()+" "+pronostico.get(1).getResultadoApuesta().getResultadoEqu2());
-			   System.out.println(pronostico.get(2).getPartido().getEquipo1().getEquipo()+ " "+pronostico.get(2).getPartido().getEquipo2().getEquipo()+pronostico.get(2).getPersona().getNombre()+" "+pronostico.get(2).getResultadoApuesta().getResultadoEqu1()+" "+pronostico.get(2).getResultadoApuesta().getResultadoEqu2());
-			   System.out.println(pronostico.get(3).getPartido().getEquipo1().getEquipo()+ " "+pronostico.get(3).getPartido().getEquipo2().getEquipo()+pronostico.get(3).getPersona().getNombre()+" "+pronostico.get(3).getResultadoApuesta().getResultadoEqu1()+" "+pronostico.get(3).getResultadoApuesta().getResultadoEqu2());
-			   System.out.println(pronostico.get(4).getPartido().getEquipo1().getEquipo()+ " "+pronostico.get(4).getPartido().getEquipo2().getEquipo()+pronostico.get(4).getPersona().getNombre()+" "+pronostico.get(4).getResultadoApuesta().getResultadoEqu1()+" "+pronostico.get(4).getResultadoApuesta().getResultadoEqu2());
-			   System.out.println(pronostico.get(5).getPartido().getEquipo1().getEquipo()+ " "+pronostico.get(5).getPartido().getEquipo2().getEquipo()+pronostico.get(5).getPersona().getNombre()+" "+pronostico.get(5).getResultadoApuesta().getResultadoEqu1()+" "+pronostico.get(5).getResultadoApuesta().getResultadoEqu2());
-			   System.out.println(pronostico.get(6).getPartido().getEquipo1().getEquipo()+ " "+pronostico.get(6).getPartido().getEquipo2().getEquipo()+pronostico.get(6).getPersona().getNombre()+" "+pronostico.get(6).getResultadoApuesta().getResultadoEqu1()+" "+pronostico.get(6).getResultadoApuesta().getResultadoEqu2());
-			   System.out.println(pronostico.get(7).getPartido().getEquipo1().getEquipo()+ " "+pronostico.get(7).getPartido().getEquipo2().getEquipo()+pronostico.get(7).getPersona().getNombre()+" "+pronostico.get(7).getResultadoApuesta().getResultadoEqu1()+" "+pronostico.get(7).getResultadoApuesta().getResultadoEqu2());
+			   System.out.println("        ");
+			   for (int indice2 =0; indice2<pronostico.size();indice2++) {
+			   System.out.println(pronostico.get(indice2).getPartido().getEquipo1().getEquipo()+ " "+pronostico.get(indice2).getPartido().getEquipo2().getEquipo()+" "+pronostico.get(indice2).getPersona().getNombre()+" "+pronostico.get(indice2).getResultadoApuesta().getResultadoEqu1()+" "+pronostico.get(indice2).getResultadoApuesta().getResultadoEqu2());
+			   }
 			   System.out.println("---------");
 			 
-			   /*
-
-				for(int index=0; index<pronostico.size();index++)		
-					
-			   {    int p = 1;
-			   		for (int index2=0; index2<rondasPartido.size();index2++) // si los equipo de las apuestas coinsiden con los equipos de los resultados reales  ( se podria agregar ronda )
-			   			{
-				   			
-				   		if ( pronostico.get(index).getResultadoApuesta().getResultadoEqu1().equals(ResultadoEnumRondaPartido.get(index2).getResultadoEqu1())     &&  pronostico.get(index).getResultadoApuesta().getResultadoEqu2().equals(ResultadoEnumRondaPartido.get(index2).getResultadoEqu2())  ) 
-				   		if ( pronostico.get(index).getPartido().getEquipo1().getEquipo().equals(rondasPartido.get(index2).getPartido().getEquipo1().getEquipo()) && pronostico.get(index).getPartido().getEquipo2().getEquipo().equals(rondasPartido.get(index2).getPartido().getEquipo2().getEquipo()) )		 	 
-				   																													
-				   					
-				   			{	
-				   				if (		personas.contains(     personas.get(	personas.indexOf (pronostico.get(index).getPersona())		)		)	)   { 
-				   					int señaloPersona =              personas.indexOf (pronostico.get(index).getPersona());   				
-				   					personas.get( señaloPersona  ).setPuntos(p);     
-				   					System.out.println(p + "primer punto, dentro 2do loop nombre:  "+ personas.get(señaloPersona).getNombre()  +" puntos: "+    personas.get(señaloPersona).getPuntos()   );
-				   					p=personas.get(señaloPersona).getPuntos()+1;
-				   					
-				   				
-				   				}
-				   			}
-				   	 										
-				   					System.out.println(p +" dentro del primer loop " + personas.get(personas.indexOf (pronostico.get(index).getPersona())).getNombre()  +" puntos: "+    personas.get(personas.indexOf (pronostico.get(index).getPersona())).getPuntos() );	//p++;	
-				   				
-						  }
-				}		
-				
-				
-				
-			
-				*/
-			   
-			   
+			//public void puntajesapuestas (personas, pronostico, rondasPartido, ResultadoEnumRondaPartido )	{		 			   
 			   for ( int idx=0; idx<personas.size();idx++) {
-				   System.out.println("llegue 1");int p = 0;         //reseteo el contador al pasar a otra pesona
+				   /*System.out.println("llegue 1")*/; int p = 0;         //reseteo el contador al pasar a otra pesona
 				   for ( int idx2=0; idx2<pronostico.size();idx2++) {
-					   System.out.println("llegue 2");
+					   //System.out.println("llegue 2");
 					   for( int idx3=0; idx3<rondasPartido.size();idx3++) { 
-						   System.out.println("llegue 3");
+						   //System.out.println("llegue 3");
 						   if ( personas.get(idx).getNombre().equals(pronostico.get(idx2).getPersona().getNombre())) { 
-							   System.out.println("llegue 3");
+							   //System.out.println("llegue 3");
 							   if( pronostico.get(idx2).getPartido().getEquipo1().getEquipo().equals(rondasPartido.get(idx3).getPartido().getEquipo1().getEquipo()  )  ) {
-								   System.out.println("llegue 4");
+								   //System.out.println("llegue 4");
 								   if( pronostico.get(idx2).getPartido().getEquipo2().getEquipo().equals(rondasPartido.get(idx3).getPartido().getEquipo2().getEquipo()  ))   {
-									   System.out.println("llegue 5");
+									   //System.out.println("llegue 5");
 									   if(pronostico.get(idx2).getResultadoApuesta().getResultadoEqu1().equals(ResultadoEnumRondaPartido.get(idx3).getResultadoEqu1()   )  ) {
-										   System.out.println("llegue 6"); 
+										   //System.out.println("llegue 6"); 
 										   if(pronostico.get(idx2).getResultadoApuesta().getResultadoEqu2().equals(ResultadoEnumRondaPartido.get(idx3).getResultadoEqu2()  )   ){
-											   System.out.println("llegue 7"); p=personas.get(idx).getPuntos()+1; ;personas.get(idx).setPuntos(p);                 //doy el punto y incremento para la proxima coincidencia
+											   //System.out.println("llegue 7"); 
+											   p=personas.get(idx).getPuntos()+1; ;personas.get(idx).setPuntos(p);                 //doy el punto e incremento 
 											   
 											   
 											   											   }		}		}		}		}		}		}		}
@@ -217,9 +175,14 @@ public class Main {
 			   				
 				
 				for ( int index3 =0; index3<personas.size();index3++)
-				{System.out.println("nombre:  "+ personas.get(index3).getNombre()  +" puntos: "+    personas.get(index3).getPuntos()              );}
+				{System.out.println("nombre:  "+ personas.get(index3).getNombre()  +" puntos: "+    personas.get(index3).getPuntos()              );}           // }puntajesapuestas(personas, pronostico, rondasPartido, ResultadoEnumRondaPartido );
 				
 	}
 
 	
-}
+		
+	}
+
+	
+
+	
