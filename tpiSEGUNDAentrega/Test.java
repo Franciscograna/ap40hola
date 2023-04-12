@@ -13,11 +13,12 @@ import main.ResultadoEnum;
 import main.Ronda;
 
 import org.junit.Assert;
+import org.junit.Test;
 
-public class Test {
+public class Testeo {
 	
-	
-	public void testsVarios() {// ingreso planillas con valores y trato de verificar los puntos de cada persona
+	@Test
+	public  void testsVarios() {// ingreso planillas con valores y trato de verificar los puntos de cada persona
 		
 		ArrayList<ResultadoEnum> ResultadoEnumRondaPartido = new ArrayList<ResultadoEnum>(); 
 		ArrayList<Partido>       rondaPartido              = new ArrayList<Partido>();
@@ -39,11 +40,12 @@ public class Test {
 		  main.Main.calcularPuntajes( personas,  pronostico,  rondasPartido,  ResultadoEnumRondaPartido) ;
 		
 		
+		 
+		  int puntaje = personas.get(1).getPuntos();
+		 // int puntaje = personas.get(0).getPuntos();
+		  assertEquals(1, puntaje,0.00001);//Mariana
+		 // assertEquals(1, puntaje,0.00001);//pedro 
 		
-		  int puntaje = personas.get(0).getPuntos();
-		  
-		
-		assertEquals(1, puntaje,0.00001);
 	}
 
 }
