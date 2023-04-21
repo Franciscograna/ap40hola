@@ -28,7 +28,7 @@ public class Main {
 			
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				String url = "jdbc:mysql://localhost:3307/futbolapp"; //anda
+				String url = "jdbc:mysql://localhost:3307/pronosticosyresultados"; //anda
 				String usuario="root";
 				String password="";
 				

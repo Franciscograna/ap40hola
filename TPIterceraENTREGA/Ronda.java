@@ -53,16 +53,16 @@ public class Ronda {
 public static void leerresultados(ArrayList<ResultadoEnum> ResultadoEnumRondaPartido, ArrayList<Ronda> rondasPartido, Connection con) {
 try {
 	Statement stmt=con.createStatement();
-	ResultSet rs=stmt.executeQuery("select * from resultados");
+	ResultSet rs=stmt.executeQuery("select * from tabla_goles");
 	
 	
 	while(rs.next())	//loop de lectura		
 	 { 
-		int    nroRonda       = rs.getInt(0);         //arranca de 1 
-	    String equipo1Nombre  = rs.getString(1); 
-	    String equipo2Nombre  = rs.getString(4); 
-	    int    equipo1Goles   = rs.getInt(2);
-	    int    equipo2Goles   = rs.getInt(3);
+		int    nroRonda       = rs.getInt(2);         //arranca de 1 
+	    String equipo1Nombre  = rs.getString(3); 
+	    String equipo2Nombre  = rs.getString(6); 
+	    int    equipo1Goles   = rs.getInt(4);
+	    int    equipo2Goles   = rs.getInt(5);
 	    															// armo las clases equipo con los Strings leidos
 		Equipo equipo1Result = new Equipo(equipo1Nombre,"");  Equipo equipo2Result = new Equipo(equipo2Nombre,"");
 																					//

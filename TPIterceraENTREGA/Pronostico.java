@@ -53,11 +53,11 @@ public class Pronostico {
 	public static void leerpronostico(ArrayList<Persona> personas, ArrayList<Pronostico> pronostico, Connection con) {
 		try {
 			Statement stmt=con.createStatement();
-			ResultSet rs=stmt.executeQuery("select * from pronosticos");
+			ResultSet rs=stmt.executeQuery("select * from tabla_partidos");
 			int i=0;
 			while(rs.next())			
 			 { 
-				String persona        = rs.getString(1);  //leo nombre 
+				String persona        = rs.getString(2);  //leo nombre 
 				Persona personaAdd = new Persona(persona,0); // para agregar persona
 				
 				if (i==0) {
@@ -76,11 +76,11 @@ public class Pronostico {
 							 												 
 				String resultado1a    = "EMPATE";  //leo y guardo valores
 				String resultado2a    = "EMPATE";
-			    String gana1          = rs.getString(3);
-			    String empata         = rs.getString(4);
-			    String gana2          = rs.getString(5);
-			    String equipA1          = rs.getString(2);
-			    String equipA2          = rs.getString(6);
+			    String gana1          = rs.getString(4);
+			    String empata         = rs.getString(5);
+			    String gana2          = rs.getString(6);
+			    String equipA1          = rs.getString(3);
+			    String equipA2          = rs.getString(7);
 			    Equipo equipoA1 = new Equipo(equipA1,"");                        // armo partido
 			    Equipo equipoA2 = new Equipo(equipA2,"");						//
 			    Partido partAdd = new Partido (equipoA1,equipoA2,0 ,0);			//
