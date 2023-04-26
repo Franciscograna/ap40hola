@@ -158,7 +158,7 @@ public class Pronostico {
 			  }
 			   
 			} catch (SQLException e) {
-				System.out.println("error SQL...");
+				System.out.println("error al leer de la tabla...");
 				e.printStackTrace();
 			}  
 			 

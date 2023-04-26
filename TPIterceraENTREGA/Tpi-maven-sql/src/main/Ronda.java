@@ -139,7 +139,7 @@ try {
 	
 		}
 } catch (SQLException e) {
-	System.out.println("error SQL...");
+	System.out.println("Error al leer la tabla");
 	e.printStackTrace();
 }
 	   System.out.println("---------");

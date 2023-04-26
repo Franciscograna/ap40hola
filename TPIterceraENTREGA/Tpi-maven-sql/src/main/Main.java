@@ -36,8 +36,6 @@ public class Main {
 				
 				if (con != null) {
 				    System.out.println("conectado a la base de datos");
-				} else {
-				    System.out.println("fallo la conexion con la base de datos");
 				}
 				
 				
@@ -54,7 +52,7 @@ public class Main {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				 System.out.println("fallo la conexion con la base de datos");
 				e.printStackTrace();
 			}
 			
